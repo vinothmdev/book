@@ -2,6 +2,14 @@
 
 [![Build Status](https://travis-ci.org/rust-lang/book.svg?branch=master)](https://travis-ci.org/rust-lang/book)
 
+இந்த களஞ்சியத்தில் "ரஸ்ட் நிரலாக்க மொழி" புத்தகத்தின் அனைத்து பதிப்புகளின் மூலமும் அடங்கியுள்ளது.
+
+இது இரண்டாம் பாகத்தினை மொழிபெயர்கும் முயற்ச்சியில் உரூவாக்க பட்ட கிழை களஞ்சியம்.
+
+பின்வரும் அனைத்தும் மூல களஞ்சியத்தில் இருந்து அடிப்படை மாறாமல் பிரதியை எடுக்கபட்டவை.
+
+மேலும் தொடர்புக்கு [<inoth.m.dev@gmail.com>
+
 This repository contains the source of all editions of "the Rust Programming
 Language".
 
@@ -74,8 +82,8 @@ kinds of contributions we're looking for.
 
 ### 2018 Edition
 
-The "2018" Edition is in the process of being updated with the language changes 
-that will be available with the 2018 Edition of the Rust language. All new 
+The "2018" Edition is in the process of being updated with the language changes
+that will be available with the 2018 Edition of the Rust language. All new
 contributions should be to this edition.
 
 ### Second Edition
