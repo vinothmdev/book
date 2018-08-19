@@ -8,7 +8,7 @@
 
 பின்வரும் அனைத்தும் மூல களஞ்சியத்தில் இருந்து அடிப்படை மாறாமல் பிரதியை எடுக்கபட்டவை.
 
-மேலும் தொடர்புக்கு [<inoth.m.dev@gmail.com>
+மேலும் தொடர்புக்கு <vinoth.m.dev@gmail.com>
 
 This repository contains the source of all editions of "the Rust Programming
 Language".
