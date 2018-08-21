@@ -1,16 +1,17 @@
-# Introduction
+# முன்னுரை
 
-> Note: This edition of the book is the same as [The Rust Programming
-> Language][nsprust] available in print and ebook format from [No Starch
-> Press][nsp].
+> குறிப்பு: இந்த புத்தகத்தின் ஆங்கில பதிப்பு [The Rust Programming Language][nsprust]
+> என்ற அச்சிட்ட மற்றும் மின நூலின் பிரதி [No Starch Press][nsp].
 
 [nsprust]: https://nostarch.com/rust
 [nsp]: https://nostarch.com/
 
-Welcome to *The Rust Programming Language*, an introductory book about Rust.
-The Rust programming language helps you write faster, more reliable software.
-High-level ergonomics and low-level control are often at odds in programming
-language design; Rust challenges that conflict. Through balancing powerful
+*The Rust Programming Language* அறிமுக புத்தகத்திற்கு வரவேற்கிறொம்.  இரஸ்ட் அதிவிரைவு
+மற்றும் நம்பக மிக்க மென்பொருளை உருவாக்க உதவுகின்றது.  பொதுவாக மேல்நிலை பணிச்சூழலியல்
+மற்றும் அடிப்படை கட்டுபாடு இரண்டும் மொழி வடிவமைப்பின் முரண்பட்ட பிரிவுகளாக கருதப்படுபவை;
+இரஸ்ட் அந்த முரண்பாட்டை சவாலாக எடுத்து கொண்டது.
+
+Through balancing powerful
 technical capacity and a great developer experience, Rust gives you the option
 to control low-level details (such as memory usage) without all the hassle
 traditionally associated with such control.
