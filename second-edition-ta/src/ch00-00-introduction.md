@@ -9,172 +9,157 @@
 *The Rust Programming Language* அறிமுக புத்தகத்திற்கு வரவேற்கிறொம்.  இரஸ்ட் அதிவிரைவு
 மற்றும் நம்பக மிக்க மென்பொருளை உருவாக்க உதவுகின்றது.  பொதுவாக மேல்நிலை பணிச்சூழலியல்
 மற்றும் அடிப்படை கட்டுபாடு இரண்டும் மொழி வடிவமைப்பின் முரண்பட்ட பிரிவுகளாக கருதப்படுபவை;
-இரஸ்ட் அந்த முரண்பாட்டை சவாலாக எடுத்து கொண்டது.
+இரஸ்ட் அந்த முரண்பாட்டை சவாலாக எடுத்து கொண்டது.  வலுவான தொழில்நுட்ப திறன் மற்றும்
+மேம்பாட்டாளர் பயண்பாட்டு எளிமை இரண்டிர்க்கும் இடைபட்ட சமநிலை தருவதன் மூலம் நினைவக
+மேலான்மை பொன்ற அடிப்படை கட்டுபாடுகளை உருவாக்க சிக்கல் அற்ற வழிவகை இரஸ்ட் தருகின்றது.
 
-Through balancing powerful
-technical capacity and a great developer experience, Rust gives you the option
-to control low-level details (such as memory usage) without all the hassle
-traditionally associated with such control.
+## இரஸ்ட் யாருக்கு
 
-## Who Rust Is For
+இரஸ்ட் பல்வேறு காரணங்களுக்காக பல தர பட்ட மக்களுக்கு ஏற்றதாக உள்ளது. குறிப்பாக சில முக்கிய
+குழுக்களை கண்போம்.
 
-Rust is ideal for many people for a variety of reasons. Let’s look at a few of
-the most important groups.
+### மேம்பாட்டாளர் குழு
 
-### Teams of Developers
+இரஸ்ட் கணினி இயங்கு தலம் சார் திரமைகளில் பலதர அனுபவம் மிக்க பெரிய மேம்பாட்டாளர் குழுக்கள் ஒருங்கினைந்து செயல் ஆற்ற தேவையான பல கருவிகளை கொடுத்து உதவுகின்றது.  அடிப்படை நிரல்கள்
+மிகவும் நுன்னிய பிழைகளால் எளிதில் பாதிக்க படும், மற்ற மொழிகளில் அத்தகைய பிழைகளை பல
+சோதனைகள் மற்றும் அனுபவமிக்க மேம்பாட்டாளர் மதிப்பாய்வு மூலம் மட்டுமே கண்டுபிடிக்கமுடியும்.  இரஸ்டில், தொகுப்பி காவலாளியாக செயல்பட்டு ஒருங்கிணைவு போன்ற நழுவக்கூடிய தவறுகள், இருப்பின் நிரல் தொகுப்பை தடுத்து தீர்வுகாண உதவுகிண்றது.  தொகுப்பியுடன் இனைந்து பணிசெய்வதன் மூலம்
+குழுக்கள் பிழைகள் பற்றி கவலை இல்லாமல் தங்கள் தர்க்க முறைகளில் அதிக கவனம் செலுத்த இயலும்.
 
-Rust is proving to be a productive tool for collaborating among large teams of
-developers with varying levels of systems programming knowledge. Low-level code
-is prone to a variety of subtle bugs, which in most other languages can be
-caught only through extensive testing and careful code review by experienced
-developers. In Rust, the compiler plays a gatekeeper role by refusing to
-compile code with these elusive bugs, including concurrency bugs. By working
-alongside the compiler, the team can spend their time focusing on the program’s
-logic rather than chasing down bugs.
+இரஸ்ட் சமகால கருவிகளை கணினி இயங்கு தலம் மேம்பாட்டாளர்களுக்கு வழங்குகின்றது:
 
-Rust also brings contemporary developer tools to the systems programming world:
+* கார்கொ (Cargo), இதில் சார்பு மேலாளர் மற்றும் கட்டுமான கருவி அடங்கியுள்ளது, இது சார்புகளை
+இனைத்தல், தொகுத்தல் மற்றும் மேலான்மை சேய்தல் அனைத்தயும் எளிமையாகுவதுடன் இரஸ்ட் சூழலில்
+ஒத்துபோகின்றது.
+* Rustfmt மேம்பாட்டாளர்கள் இடையே ஒரு நிலையான குறியீட்டு பண்பாட்டை உறுதி செய்கிறது.
+* இரஸ்ட் மொழி சேவையகம் ஒருங்கிணைந்த மேம்பாட்டு சுற்றுச்சூழலை, குறியீடு நிரப்புதல் மற்றும் வரி பிழை செயிதிகள் கொன்டு அற்றல் மிக்கதா செய்கின்றது.
 
-* Cargo, the included dependency manager and build tool, makes adding,
-  compiling, and managing dependencies painless and consistent across the Rust
-  ecosystem.
-* Rustfmt ensures a consistent coding style across developers.
-* The Rust Language Server powers Integrated Development Environment (IDE)
-  integration for code completion and inline error messages.
+இத்தகைய கருவிகள் மற்றும் சில உதவி கருவிகள் கொன்டு இரஸ்ட் சூழல், கணினி இயங்கு தலம் மேம்பாட்டாளர் உற்பத்தி திறனை அதிகறிக்க செய்கின்றது.
 
-By using these and other tools in the Rust ecosystem, developers can be
-productive while writing systems-level code.
+### மாணவர்கள்
 
-### Students
+இரஸ்ட் கணினி பற்றி ஆர்வமாக உள்ள மாணவர்கள் அனைவருக்குமானது.  இரஸ்ட் பயபடுத்தி இயங்கு
+தலம் பொன்ற தலைப்புகளை பலர் பயின்று உள்ளனர்.  இரஸ்ட் சமூகம் மாணவர்களை வரவேற்று
+இனிமுகதுடன் பதில் தரும் சமூகமாக உள்ளது.  குறிப்பாக புதிதாக குறியீடு செய்வோருக்கு இந்த
+புத்கம் போன்ற பல தொடர் முயற்ச்சிகளால் கணினி அடிப்படைகள் அனைவரும் அணுகும்படு
+செய்யவிரும்புகின்றது.
 
-Rust is for students and those who are interested in learning about systems
-concepts. Using Rust, many people have learned about topics like operating
-systems development. The community is very welcoming and happy to answer
-student questions. Through efforts such as this book, the Rust teams want to
-make systems concepts more accessible to more people, especially those new to
-programming.
+### நிறுவனங்கள்
 
-### Companies
+நூற்றுக்கணக்கான, பெரிய மற்றும் சிறிய, நிறுவனங்கள், பல்வேறு உற்பத்தி பணிகளை செய்ய இரஸ்டை
+பயன்படுத்துகின்றன.  இரஸ்ட் கட்டளை வரி கருவிகள், இணைய சேவைகள், டெவ்-ஆப்ஸ் கருவிகள்,
+உட்பொதிக்கப்பட்ட சாதனங்கள், ஒலி ஒளி பகுப்பாய்வு மற்றும் குறிமாற்றம் செய்தல், மறைநாணயங்கள்,
+உயிர்தகவலியல், தேடு பொரிகள், சாதனங்களின் வலிபிண்னல் பயன்பாடுகள், இயந்திரதின் கற்றல் போன்ற
+பல்வேரு காரணங்களுக்காக பயன்படுத்தபடுவதுடன் இன்றி Firefox இணைய உலாவியின் பெரும் பகுதியாக
+செயல்படுகின்றது.
 
-Hundreds of companies, large and small, use Rust in production for a variety of
-tasks. Those tasks include command line tools, web services, DevOps tooling,
-embedded devices, audio and video analysis and transcoding, cryptocurrencies,
-bioinformatics, search engines, Internet of Things applications, machine
-learning, and even major parts of the Firefox web browser.
+### திறந்த மூல கட்டமைப்பாளர்கள்
 
-### Open Source Developers
+இரஸ்ட் நிரலாக்க மொழி உருவாக்க விரும்புபவர்களுக்கான மொழி இரஸ்ட், அது அதன்
+சமூகம், மேம்பாட்டு கருவிகள் மற்றும் மென்தொகுப்புகள் உருவாகவும் பயன்படுகின்றது. உங்கள்
+பங்களிப்பும் வரவேற்க்கிறோம்.
 
-Rust is for people who want to build the Rust programming language, community,
-developer tools, and libraries. We’d love to have you contribute to the Rust
-language.
+### வேகம் மற்றும் நிலைப்புத்தன்மையை மதிக்கும் மக்கள்
 
-### People Who Value Speed and Stability
+வேகம் மற்றும் நிலைப்புத்தன்மையை அதிகம் மதிக்கும் மக்களுக்கான மொழு இரஸ்ட்.  வேகம் என்பது
+நிரலின் செயல் வாகத்தினை மட்டுமின்றி அதனை உருவாக்கும் உற்பத்தி வேகத்தையும் குறிக்கின்றது.
+அம்ச மேம்பாடு மற்றும் மறுசீரமைப்பு பணிகளால் நம்பக தன்மை குறையாமல் இருக்க இரஸ்டின் தொகுப்பி
+சரிபார்க்கிறது.  அத்தகய சரிபார்ப்பு இல்லாத மொழிகளில் சுலபமாய் முறியத்தக்க மரபுவழி குறியீடுகளில் மாற்றம் செய்ய மேம்பாட்டாளர் தயக்கம் காட்டுவார்கள்.  விரயமற்ற கருத்தியல்கள்
+உருவாக்க முயல்வதால், மேல் நிலை அம்சங்கள் கைமுறையாக எழுதபட்டதை பொலவே அதிவேகமாக
+செயலாற்றும் அடிப்படை இயந்திர குறியீடாக தொக்கபடுகின்றன, இதனால் இரஸ்ட் பாதுகாப்புடன் கூடிய
+அதிவேக குறியீடுகளை உருவாகின்றது.
 
-Rust is for people who crave speed and stability in a language. By speed, we
-mean the speed of the programs that you can create with Rust and the speed at
-which Rust lets you write them. The Rust compiler’s checks ensure stability
-through feature additions and refactoring. This is in contrast to the brittle
-legacy code in languages without these checks, which developers are often
-afraid to modify. By striving for zero-cost abstractions, higher-level features
-that compile to lower-level code as fast as code written manually, Rust
-endeavors to make safe code be fast code as well.
+இங்கே குறிப்பிடப்பட்டவை மிகப்பெரிய பங்குதாரர்களில் சிலர் மட்டுமே; ஆயினும் இரஸ்ட் மொழி மேலும்
+பலவகையான பயனர்களையும் எதிர்பார்த்தே உருவாக்க பட்டுள்ளது. மொத்ததில், இரஸ்டின் மிகப்பெரிய
+லட்சியமே பாதுகாப்பு *அல்லது* உற்பத்தி திறன், வேகம் *அல்லது* பணிச்சூழலியல் இடையே பல
+தசாப்தங்களாக கட்டமைப்பாளர்களால் செய்ய வேண்டியுல்ல சமரசங்களை குறைப்பதே.  இரஸ்ட் ஒரு
+முறை முயற்சி செய்து பின் அதன் தேர்வுகள் உங்களுக்காக வேலை செய்கிறதா என்று பாருங்கள்.
 
-The Rust language hopes to support many other users as well; those mentioned
-here are merely some of the biggest stakeholders. Overall, Rust’s greatest
-ambition is to eliminate the trade-offs that programmers have accepted for
-decades by providing safety *and* productivity, speed *and* ergonomics. Give
-Rust a try and see if its choices work for you.
+## யாருக்கு இந்த புத்தகம்?
 
-## Who This Book Is For
+இந்த புத்தகம் உங்களுக்கு ஏதேனும் ஒரு கணினி மொழியில் குறியீடு எழுதும் அனுபவம் இருப்பதாக  
+கருதுகிறது.  இதன் அமைப்பு பல வகையான மொழி பயன்பாட்டலர்களுக்கும் எழிதில் புரியும் முயர்சி
+அமைக்க பட்டுள்ளது. நிரலாக்கம் *என்றால்* என்ன என்பதையோ அதை எப்படி வடிவமைப்பது
+என்பதையோ பற்றி அதிகம் விவாதிக்கவில்லை.  ஓருவேலை நீங்கள் எந்த நிரலாக்க அனுபவமும்
+இல்லாதவர் என்றால் அதனை பற்றிய சிரப்பு புத்தகளை பயின்றால் உதவியாக இருக்கும்.
 
-This book assumes that you’ve written code in another programming language but
-doesn’t make any assumptions about which one. We’ve tried to make the material
-broadly accessible to those from a wide variety of programming backgrounds. We
-don’t spend a lot of time talking about what programming *is* or how to think
-about it. If you’re entirely new to programming, you would be better served by
-reading a book that specifically provides an introduction to programming.
+## இந்த புத்தகத்தைப் பயன்படுத்துவது எப்படி?
 
-## How to Use This Book
+பொதுவாக, இந்த புத்தகம் நீங்கள் ஆரம்பம் முதல் கடைசி வர வரிசை படிப்பதாக எதிர் பார்புடன்
+உருவாக்க பட்டுள்ளது. துவக்க அத்தியாயங்கள் ஒரு தலைப்பில் விவரங்களை மேலோட்டமாகவும், பின்
+அத்தியாயங்களை அதை சார்ந்தும் விரிவாக்கமாகவும் அமைக்க பட்டுள்ளது. பின் பாகங்கள் தலைப்பு
+சுருக்கதுடன் கொடுக்க பட்டுள்ளது.
 
-In general, this book assumes that you’re reading it in sequence from front to
-back. Later chapters build on concepts in earlier chapters, and earlier
-chapters might not delve into details on a topic; we typically revisit the
-topic in a later chapter.
+நீங்கள் கருத்து அத்தியாயம் மற்றும் திட்ட அத்தியாயம் எனும் இரண்டு வகையான அத்தியாயங்களை
+காணலாம்.  கருத்து அத்தியாயங்கள், ஒரு குறிப்பிட்ட இரஸ்ட் அம்சம் பற்றியும்.  திட்ட
+அத்தியாயங்கள் அதனை எப்படி பயன்படுத்தி நிரல்களை உருவாக்க முடியும் எனும் வழிகள் கொன்டு
+இருக்கும்.
 
-You’ll find two kinds of chapters in this book: concept chapters and project
-chapters. In concept chapters, you’ll learn about an aspect of Rust. In project
-chapters, we’ll build small programs together, applying what you’ve learned so
-far. Chapters 2, 12, and 20 are project chapters; the rest are concept chapters.
+அத்தியாயம் 1 இரஸ்டை நிறுவுதல், அடிப்படை வணக்கம் தமிழா எழுதுவது, Cargo, இரஸ்டின் தொகுப்பு
+மேலாளர் மற்றும் கட்டுமான கருவி ஆகியவற்றை பற்றி விவரிக்கின்றது. 2 ஆம் அத்தியாயம் இரஸ்டின்
+செய்முறை பயிற்சி தருகின்றது. இங்கு ஆரம்ப நிலை குறிப்புகள் மட்டும் தரப்பட்டுள்ளது, மேலுன்
+விவரங்கள் பின் வரும் பகுதிகளில் விரிவாக விவாதிக்கபடும்.  நிரல்கள் எழுத அதிக ஆர்வம் இருந்தால்
+இந்த அத்தியாயம் நல்ல துவக்கமாக இருக்கும். மற்ற மொழிகளைடன் இரஸ்டில் பொதுவாக உள்ள
+அம்சங்களை 3 ஆம் பாகம் விளக்குவதால் நீங்கள் அதை தவிர்த்து இரஸ்டின் உரிமை அமைப்பு பற்றி
+விவரிக்கும் 4ஆம் பாகம் நேரடியாக போக விரும்பலாம். ஆயினும் நீங்கள் அடிப்படைகளை உன்னிப்பாக
+அறிந்து செயல்படுபவராயின் 2ஆம் பாகம் தவிர்த்து 3ஆம் பாகத்தினை பயின்று பின் மீன்டும் 2ஆம்
+பாகம் வரலாம்.
 
-Chapter 1 explains how to install Rust, how to write a Hello, world! program,
-and how to use Cargo, Rust’s package manager and build tool. Chapter 2 is a
-hands-on introduction to the Rust language. Here we cover concepts at a high
-level, and later chapters will provide additional detail. If you want to get
-your hands dirty right away, Chapter 2 is the place for that. At first, you
-might even want to skip Chapter 3, which covers Rust features similar to those
-of other programming languages, and head straight to Chapter 4 to learn about
-Rust’s ownership system. However, if you’re a particularly meticulous learner
-who prefers to learn every detail before moving on to the next, you might want
-to skip Chapter 2 and go straight to Chapter 3, returning to Chapter 2 when
-you’d like to work on a project applying the details you’ve learned.
+5ஆம் பாகம் structs மற்றும் methods-யையும், 6ஆம் பாகம்  enums, `match` வெளிப்பாடுகள், மற்றும்
+`if let` கட்டுபாடு வழிமுறைகளையும் விவரிக்கின்றன.  structs மற்றும் enums இரஸ்டில் சிரப்பு
+மாதிரிகளை உருவாக்க பயன்படும்.
 
-Chapter 5 discusses structs and methods, and Chapter 6 covers enums, `match`
-expressions, and the `if let` control flow construct. You’ll use structs and
-enums to make custom types in Rust.
+7ஆம் பாகம், இரஸ்டின் module அமைப்பை கொன்டு தனியுரிமை விதிகளுடன் உங்களை நிரல்கள்
+அமைப்பது மற்றும் பொது பயன்பாடு இடைமுகம் (API) அமைப்பது பற்றியும் விவரிக்கின்றது.  8ஆம்
+பாகதில் பொதுவாக பயன்படும் தொகுப் தரவு கட்டமைப்புகள் மற்றும் அவற்றை தரும் அதிகார தொகுப்புகள்
+பற்றியும் நீங்கை அறிந்து கொள்ளாம்.
 
-In Chapter 7, you’ll learn about Rust’s module system and about privacy rules
-for organizing your code and its public Application Programming Interface
-(API). Chapter 8 discusses some common collection data structures that the
-standard library provides, such as vectors, strings, and hash maps. Chapter 9
-explores Rust’s error-handling philosophy and techniques.
+பல வகைகளுக்கு பொது குறியீடு அமைக்கும் ஆற்றலை தரும் generics, traits, and lifetimes
+பற்றி 10ஆம் பாகதில் காணலாம்.  11ஆம் பாகம் சோதனை குறிப்புகளை அமைப்பது பற்றி விவரிக்கின்றது,
+இரஸ்ட் அடிப்படை சோதனைகளை தொகுப்பியால் செய்தாலும் உங்கள் குறிப்பின் தர்க்க முறையை
+சோதிப்பது அவசியம்.  12ஆம் பாகம் `grep` கட்டளை வரி கருவியின் சிறு செயல்பாட்டை மறு
+ஆக்கம் செய்யது ஒரு கோப்பில், சொல் தேட செய்ய உங்களுக்கு வழிகாடுகிறது.
 
-Chapter 10 digs into generics, traits, and lifetimes, which give you the power
-to define code that applies to multiple types. Chapter 11 is all about testing,
-which even with Rust’s safety guarantees is necessary to ensure your program’s
-logic is correct. In Chapter 12, we’ll build our own implementation of a subset
-of functionality from the `grep` command line tool that searches for text
-within files. For this, we’ll use many of the concepts we discussed in the
-previous chapters.
+அத்தியாயம் 13 closures மற்றும் iterators-ஐ ஆராய்கிறது: இவை functional நிரலாக்க
+மொழிகளில் இருந்து வரும் இரஸ்ட் அம்சங்கள். அத்தியாயம் 14இல், Cargo பற்றி ஆழமகவும் அதனை
+பயன் படுத்தி குறியீடு தொகுப்புகளை பகிர்வதன் சிறந்த நடைமுறைகளையும் விவாதிக்கிரது. 15ஆம் பாகம்
+standard library இல் உள்ள smart pointers மற்றும் அதன் செயல் பாட்டை வழங்க்கும் traits
+பற்றியும் விவாதிக்கிரது.
 
-Chapter 13 explores closures and iterators: features of Rust that come from
-functional programming languages. In Chapter 14, we’ll examine Cargo in more
-depth and talk about best practices for sharing your libraries with others.
-Chapter 15 discusses smart pointers that the standard library provides and the
-traits that enable their functionality.
+அத்தியாயம் 16ல், நாம் வெவ்வேறு மாதிரிகள் மூலம் இணைச்செயல்கள் நிரலாக்கம் மற்றும் இரஸ்ட்
+எப்படி அதர்க்கு உதவு கின்றது என ஒத்திகை கருகின்றது. அத்தியாயம் 17 உங்களுக்கு பறிச்சயம் ஆன
+object-oriented நிரலாக்கதுடன் ஒத்துபோகும் Rust idioms பற்றி சொல்கிறது.
 
-In Chapter 16, we’ll walk through different models of concurrent programming
-and talk about how Rust helps you to program in multiple threads fearlessly.
-Chapter 17 looks at how Rust idioms compare to object-oriented programming
-principles you might be familiar with.
+அத்தியாயம் 18 patterns மற்றும் pattern matching போன்ற சக்தி வாய்ந்த அம்சங்களை பற்றி
+விளக்க குறிப்பு தருகின்றது. அத்தியாயம் 19 unsafe Rust மற்றும் lifetimes, traits, types,
+functions, மற்றும் closures பற்றிய விருந்தாக அமைக் பட்டுள்ளது. அத்தியாயம் 20, அடிப்படை
+பல்புரிப் வலை சேவையகம் ஒன்றை உருவாக் பயிற்ச்சி தருகிறது!
 
-Chapter 18 is a reference on patterns and pattern matching, which are powerful
-ways of expressing ideas throughout Rust programs. Chapter 19 contains a
-smorgasbord of advanced topics of interest, including unsafe Rust and more
-about lifetimes, traits, types, functions, and closures.
+இறுதியாக, சில கூடுதல் இணைப்புகளில் மொழி பற்றிய பயனுள்ள குறிப்பு போன்ற தகவல்கள்
+உள்ளன.
 
-In Chapter 20, we’ll complete a project in which we’ll implement a low-level
-multithreaded web server!
+Appendix A ரஸ்ட் முக்கிய வார்த்தைகள், Appendix B ரஸ்டின் ஆபரேட்டர்கள் மற்றும் சின்னங்களை,
+Appendix C standard library இல் உள்ள derivable traitsஐ,
+மற்றும் Appendix D macros ஆகியவற்றை முறையே விளக்குகின்றன.
 
-Finally, some appendixes contain useful information about the language in a
-more reference-like format. Appendix A covers Rust’s keywords, Appendix B
-covers Rust’s operators and symbols, Appendix C covers derivable traits
-provided by the standard library, and Appendix D covers macros.
+இந்த புத்தகத்தை வாசிக்க தவறான வழி என்று எதுவும் இல்லை: உங்கள் இயல்புக்கும் விருப்பதிர்கும்
+ஏற்றவாரு எப்படி வேண்டுமானாலும் முன்னும் பின்னும் மாற்றி வாசிக்கலாம்.
 
-There is no wrong way to read this book: if you want to skip ahead, go for it!
-You might have to jump back to earlier chapters if you experience any
-confusion. But do whatever works for you.
+கற்றல் செயல்முறையின் ஒரு முக்கிய பகுதியாக, Rust பிழைத்திருத்த செய்திகளை தொகுப்பி
+எப்படி காட்சிப்படுத்துகிறது என்பதை அறி வேண்டும்: இவை சரியா இயங்கும் குறியீட்டை நோக்கி
+உங்களுக்கு வழிகாட்டும். அதேபோல், தொகுக்கப்படாத பல குறியீடுகளை அத்தியாயல்களுக்கு இடையே
+அதன் பிழை செய்தியுடன்  நாங்கள் வழங்குவோம்.  ஆதலால் நீங்கள் தொடர்பின்றி எடுக்கப்பட்ட
+எடுத்துகட்டுகள் எதையும் நீங்கள் தேரவு செய்தால் அவை தொகுக்கப்படாமல் போகலாம்.  எனவே அதன்
+அருகில் உள்ள குறிப்புகள் கொன்டு அந்த குறியீடு பிழையுள்ளதா என பார்த்து பயன் படுத்துங்கள்.
+பொதுவாக சரியான குறியீடு எங்கு கிடைக்கும் என்பதையும் நாங்கள் குறிப்பிட்டு உள்ளோம்.
 
-An important part of the process of learning Rust is learning how to read the
-error messages the compiler displays: these will guide you toward working code.
-As such, we’ll provide many examples of code that doesn’t compile along with
-the error message the compiler will show you in each situation. Know that if
-you enter and run a random example, it may not compile! Make sure you read the
-surrounding text to see whether the example you’re trying to run is meant to
-error. In most situations, we’ll lead you to the correct version of any code
-that doesn’t compile.
+## மூல குறியீடு
 
-## Source Code
+இந்த புத்தகம் உருவாக்கப்படும் மூல கோப்புகளை இங்கு காணலாம்
+[GitHub][book].
 
-The source files from which this book is generated can be found on
+[book]: https://github.com/vinothmdev/book/tree/master/second-edition-ta/src
+
+இந்த புத்தகதின் ஆங்கில மூல கோப்புகளை இங்கு காணலாம்
 [GitHub][book].
 
 [book]: https://github.com/rust-lang/book/tree/master/second-edition/src
