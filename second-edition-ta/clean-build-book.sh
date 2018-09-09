@@ -15,3 +15,4 @@ rm -r book
 # Build new book directory with translation
 mdbook build
 
+# Clean build binaries from exxample

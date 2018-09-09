@@ -1,138 +1,128 @@
-## Installation
+## நிறுவுதல்
 
-The first step is to install Rust. We’ll download Rust through `rustup`, a
-command line tool for managing Rust versions and associated tools. You’ll need
-an internet connection for the download.
+இரஸ்டை நிறுவும் முன் நாம் முதலில் `rustup` கட்டளை வரி கருவியை தரவிக்கம் செய்யவேண்டும்.
+இதற்கு இணைய இணைப்பு அவசியம்.
 
-> Note: If you prefer not to use `rustup` for some reason, please see [the Rust
-> installation page](https://www.rust-lang.org/install.html) for other options.
+> Note: நீங்கள் `rustup` பயன்படுத்த விரும்பவில்லை என்றால், மாற்று வழிமுறைக்கு
+[இரஸ்ட் நிறுவல் பக்கம்](https://www.rust-lang.org/install.html) காண்க.
 
-The following steps install the latest stable version of the Rust compiler. All
-the examples and output in this book use stable Rust 1.21.0. Rust’s stability
-guarantees ensure that all the examples in the book that compile will continue
-to compile with newer Rust versions. The output might differ slightly between
-versions, because Rust often improves error messages and warnings. In other
-words, any newer, stable version of Rust you install using these steps should
-work as expected with the content of this book.
+இரஸ்ட் கம்பைலரின் சமீபத்திய நிலையான பதிப்பை நிறுவவும் வழிமுறைகளை இங்கு காண்போம். இந்நூலின்
+அனைத்து எடுத்துகாட்டுகளும் இரஸ்ட் 1.21.0 பதிப்பினை கொண்டு உருவாக்க பட்டுள்ளன. இரஸ்டின்
+நிலைப்புதன்மை உத்தரவாதங்களால் இவை அனைத்தும் புதிய இரஸ்ட் பதிப்புகளிலும் கம்பைல் ஆகும்.
+ஆனால் அவுட்புட் சிறிது வித்தியாசமாக இருக்களம் ஏனெனில் ரஸ்ட் அடிக்கடி பிழை செய்திகள் மற்றும்
+எச்சரிக்கைகளை ஒவ்வொரு பதிப்பிலும் அதிகரிக்கிறது. வேருவகையில் சொல்ல வேண்டுமானால் அனைத்து
+நிலையான இரஸ்ட் பதிப்பிலும் இந்த வழிமுறைகள் வேலை செய்யும்.
 
-> ### Command Line Notation
+> ### கட்டளை வரி குறியீடுகள்
 >
-> In this chapter and throughout the book, we’ll show some commands used in the
-> terminal. Lines that you should enter in a terminal all start with `$`. You
-> don’t need to type in the `$` character; it indicates the start of each
-> command. Lines that don’t start with `$` typically show the output of the
-> previous command. Additionally, PowerShell-specific examples will use `>`
-> rather than `$`.
+> இந்த அத்தியாயம் துவங்கி புத்தகம் முழுவதும், நாம் முனையத்தில் பயன்படுத்தப்படும் சில
+> கட்டளைகளை காண்பிப்போம். அவை அனைத்தும் `$` கொண்டுதுவங்கும். நீங்கள் `$` தட்டச்சு
+> செய்ய அவசியம் இல்லை; இது கட்டளைகளின் துவங்கத்தை காட்ட மட்டுமே கொடுக்க பட்டு உள்ளது.
+> `$` இல் துவங்காத வரிகள் அதற்க்கு முன் உள்ள கட்டளை வரிகளின் அவுட்புட்டாக இருக்கும்.  மேளும்
+> பவர் செல் தொடர்பான உதாரனங்கள் `$` க்கு பதில் `>` இல் துவங்கும்.
 
-### Installing `rustup` on Linux or macOS
+### `rustup` ஐ லினக்ஸ் அல்லது மேக் ஓஸ்சில் நிறுவுதல்
 
-If you’re using Linux or macOS, open a terminal and enter the following command:
+நீங்கள் லினக்ஸ் அல்லது மேக் ஓஸ் பயன் படுத்தினால், பின் வரும் கட்டளைகளை டெர்மினலில் தட்டச்சு
+செய்யவும்:
 
 ```text
 $ curl https://sh.rustup.rs -sSf | sh
 ```
 
-The command downloads a script and starts the installation of the `rustup`
-tool, which installs the latest stable version of Rust. You might be prompted
-for your password. If the install is successful, the following line will appear:
+இது `rustup` ஐ நிறுவும் ஸ்கிரிப்டை பதிவிரக்கம் செய்து இயக்குகிறது இது, சமீபத்திய இரஸ்ட்
+நிலையான பதிப்பை நிறுவவும். நீங்கள் உங்களின் கடவுச்சொல்லை பயன் படுத்த வேண்டி இருக்களாம்.
+பநிறுவல் வெற்றிகரமாக இருந்தால், பின் வரும் வரிகள் வெளியிடப்படும்:
 
 ```text
 Rust is installed now. Great!
 ```
 
-If you prefer, feel free to download the script and inspect it before running
-it.
+நீங்கள் விரும்பினால், அத்த ஸ்கிரிப்டை பதிவிரக்கம் செய்து இயக்கும் முன் அது எப்படி இயங்குகிறது
+என ஆய்வு செய்து பாருங்கள்.
 
-The installation script automatically adds Rust to your system PATH after your
-next login. If you want to start using Rust right away instead of restarting
-your terminal, run the following command in your shell to add Rust to your
-system PATH manually:
+இந்த ஸ்கிரிப்ட் நீங்கள் அடுத்த முறை லாகின் செய்யும் போது தானாக இரஸ்டை இயக்க பாதையில்
+இணைத்து விடும். ஆயினும் நீங்கள் இரஸ்டை உடனடியாக பயன்படுத்த விரும்பினால், பின்வரும்
+கட்டளையை பயன் படுத்தி இரஸ்ட்டை PATH இல் இணைத்துவிடலாம்:
 
 ```text
 $ source $HOME/.cargo/env
 ```
 
-Alternatively, you can add the following line to your *~/.bash_profile*:
+மாறாக இரஸ்ட்டை *~/.bash_profile* இல் பின் வருமாரு சேர்க்கலாம்:
 
 ```text
 $ export PATH="$HOME/.cargo/bin:$PATH"
 ```
 
-Additionally, you’ll need a linker of some kind. It’s likely one is already
-installed, but when you try to compile a Rust program and get errors indicating
-that a linker could not execute, that means a linker isn’t installed on your
-system and you’ll need to install one manually. C compilers usually come with
-the correct linker. Check your platform’s documentation for how to install a C
-compiler. Also, some common Rust packages depend on C code and will need a C
-compiler. Therefore, it might be worth installing one now.
+மேலும், உங்களுக்கு ஒரு லிங்கர் தேவைப்படும்.  இது ஏற்கனவே நிறுவப்பட்டு இருக்க வாய்பு உள்ளது,
+ஆனால் இரஸ்ட் கம்பைல் செய்யும் போது லிங்கர் பிழை வந்தால், அது நிறுவப்பட வில்லை என அறிந்து
+கொண்டு அதனை நிறுவ வேண்டும். C கம்பைலர் கண்டிப்பாக லிங்கருடன் வரும். உங்கள் இயங்கு
+தளத்தில் அதை நிருவுதல் எப்படி என அறிந்து கொள்ளுங்கள். மேலும், சில பொதுவான இரஸ்ட்
+தொகுப்புகள் C ஐ சார்ந்து உள்ளன எனவே C கம்பைலர் அவசிய்ம் நிறுவப்பட வேண்டும்.
 
-### Installing `rustup` on Windows
+### `rustup` ஐ வின்டோசில் நிறுவுதல்
 
-On Windows, go to [https://www.rust-lang.org/install.html][install] and follow
-the instructions for installing Rust. At some point in the installation, you’ll
-receive a message explaining that you’ll also need the C++ build tools for
-Visual Studio 2013 or later. The easiest way to acquire the build tools is to
-install [Build Tools for Visual Studio 2017][visualstudio]. The tools are in
-the Other Tools and Frameworks section.
+வின்டோசில், [https://www.rust-lang.org/install.html][install] என்ற பக்கம் சென்று.
+இரஸ்ட் நிறுவும் முறைகளை அறிந்து கொள்ளுங்கள்.  ஒரு கட்டத்தில் Visual Studio 2013 அல்லது
+புதிய பதிப்பிற்க்கான C++ பில் கருவிகளை நிறுவ அறிவிப்பு வரும். அதற்க்கு எளிய வழி
+[Build Tools for Visual Studio 2017][visualstudio]. இந்த கருவிகள் பற்றி மாற்று
+கருவிகளுக்கான பின்குறிப்பில் பாருங்கள்.
 
 [install]: https://www.rust-lang.org/install.html
 [visualstudio]: https://www.visualstudio.com/downloads/
 
-The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
-If there are specific differences, we’ll explain which to use.
+இந்த புத்தகத்தின் மற்ற கட்டளைகள் அனைத்தும் *cmd.exe* மற்றும் PowerShell இரண்டிலும் வேலை
+செய்யும். அப்படி ஏதும் தனிப்பட்ட வேருபாடு இருப்பின், நாங்கள் எதை பயன் படுத்த வேண்டும் என
+விளக்குவோம்.
 
-### Updating and Uninstalling
+### புதுப்பித்தல் மற்றும் நீக்குதல்
 
-After you’ve installed Rust via `rustup`, updating to the latest version is
-easy. From your shell, run the following update script:
+`rustup` கொண்டு நிறுவியபின், புதுப்பித்தல் மிகவும் எளிது. உங்கள் shell-இல், பின்வரும்
+script-ஐ இயக்குங்கள்:
 
 ```text
 $ rustup update
 ```
 
-To uninstall Rust and `rustup`, run the following uninstall script from your
-shell:
+`rustup` கொண்டு Rust-ஐ நீக்க, உங்கள் shell-இல், பின்வரும் script-ஐ இயக்குங்கள்:
 
 ```text
 $ rustup self uninstall
 ```
 
-### Troubleshooting
+### பழுது நீக்கும்
 
-To check whether you have Rust installed correctly, open a shell and enter this
-line:
+இரஸ்ட் சரியாக நிறுவப்பட்டதா என சோதிக்க, உங்கள் shell-இல், பின்வரும் script-ஐ இயக்குங்கள்:
 
 ```text
 $ rustc --version
 ```
 
-You should see the version number, commit hash, and commit date for the latest
-stable version that has been released in the following format:
+இது நிறுவப்பட்ட இரஸ்டின் version number, commit hash, and commit date ஆகிவற்றை
+பின்வரும் வடிவில் வளிப்படுத்தும்:
 
 ```text
 rustc x.y.z (abcabcabc yyyy-mm-dd)
 ```
 
-If you see this information, you have installed Rust successfully! If you don’t
-see this information and you’re on Windows, check that Rust is in your `%PATH%`
-system variable. If that’s all correct and Rust still isn’t working, there are
-a number of places you can get help. The easiest is [the #rust IRC channel on
-irc.mozilla.org][irc]<!-- ignore -->, which you can access through
-[Mibbit][mibbit]. At that address you can chat with other Rustaceans (a silly
-nickname we call ourselves) who can help you out. Other great resources include
-[the Users forum][users] and [Stack Overflow][stackoverflow].
+நீங்கள் இந்த செய்தியை பெற்றால் வாழ்த்துக்கள் இரஸ்ட் சரியாக நிறுவப்பட்டு விட்டது! மாறாக அதை
+காணவில்லை என்றால், வின்டாஸில் `%PATH%` இயங்குதல மாறிலியை சோதித்து பாருங்கள். அதுவும்
+பயன் தரவில்லை என்றால் மற்ற பல வழிகள் உதவிக்கு உள்ளன. அதில் எளிமையானது [the #rust IRC channel on
+irc.mozilla.org][irc]<!-- ignore -->, அதை நிங்கள் [Mibbit][mibbit] கொண்டு
+அனுகளாம். அந்த அரட்டை அறங்கில் நீங்கள் மற்ற Rustaceans (எங்களின் புணைப்பெயர்) உடன்
+உரையாடி உதவி பெறலாம். மற்ற இரண்டு வழிகள்
+[the Users forum][users] மற்றும் [Stack Overflow][stackoverflow].
 
 [irc]: irc://irc.mozilla.org/#rust
 [mibbit]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [users]: https://users.rust-lang.org/
 [stackoverflow]: http://stackoverflow.com/questions/tagged/rust
 
-### Local Documentation
+### லொக்கல் டாக்குமென்டேசன்
 
-The installer also includes a copy of the documentation locally, so you can
-read it offline. Run `rustup doc` to open the local documentation in your
-browser.
+நிறுவி இரஸ்ட் ஆவணத்தின் நகலை உள்ளடக்கியது, இதன் இணைய இனைப்பு இல்லாமல் காணலாம்.
+`rustup doc` தட்டச்சு செய்து அதனை நீங்கள் படிக்கலாம்.
 
-Any time a type or function is provided by the standard library and you’re not
-sure what it does or how to use it, use the application programming interface
-(API) documentation to find out!
+எந்த நேரத்திலும் ஸ்டான்டர்டு லைபிரரி டைப் அல்லது ஃபங்ஸன் பற்றி விவரம் அறிந்து கொள்ள
+application programming interface (API) ஆவணத்திளை பாருங்கள்!
