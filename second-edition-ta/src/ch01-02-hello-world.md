@@ -1,8 +1,8 @@
-## Hello, World!
+## வணக்கம் தமிழா!
 
-Now that you’ve installed Rust, let’s write your first Rust program. It’s
-traditional when learning a new language to write a little program that prints
-the text `Hello, world!` to the screen, so we’ll do the same here!
+இச்சமயம் நீங்கள் இரஸ்ட் நிருவி இரூப்பீர்கள், எனவே முதல் செயல்முறைத் திட்டம் ஒன்றை எழுதலாம்.
+எந்த ஒரு மொழியை கற்று கொள்ளவும் முதலில் `Hello, world!` திட்டம் எழுதுவது வழக்கம்.  நாம்
+மாறாக `வணக்கம் தமிழா!` அச்சிடுட் பார்போம்!
 
 > Note: This book assumes basic familiarity with the command line. Rust makes
 > no specific demands about your editing or tooling or where your code lives, so
@@ -12,17 +12,16 @@ the text `Hello, world!` to the screen, so we’ll do the same here!
 > the Rust team has been focusing on enabling great IDE support, and progress
 > has been made rapidly on that front!
 
-### Creating a Project Directory
+### ஒரு திட்டக் கோப்பகத்தை (directory) உருவாக்குதல்
 
-You’ll start by making a directory to store your Rust code. It doesn’t matter
-to Rust where your code lives, but for the exercises and projects in this book,
-we suggest making a *projects* directory in your home directory and keeping all
-your projects there.
+முதலில் உங்கள் இரஸ்ட் நிரலை சேமிக்க ஒரு கோப்பகத்தை உருவாக்குவோம்.  இரஸ்ட் நிரல்கள்
+எந்த ஒரு குரிப்பிட்ட கோப்பகத்திலும் உருவாக்கலாம், ஆனால் இந்த புத்தகத்தில் உள்ள
+எடுத்துகாட்டுகளுக்கு *projects* என்ற ஒரு கோப்பை உருவாக்க நாங்கள் பரிந்துரைக்கிறோம்.
 
-Open a terminal and enter the following commands to make a *projects* directory
-and a directory for the Hello, world! project within the *projects* directory.
+*projects* டைரக்டரி உருவாக்க உங்கள் இயக்க செயலியை பொருத்து பின் வரும் கட்டளைகளை
+பயன் படுத்துங்கள்.
 
-For Linux and macOS, enter this:
+Linux and macOS - டெர்மினலில், பின் வரும் கட்டளைகளை பயன் படுத்தலாம்:
 
 ```text
 $ mkdir ~/projects
@@ -31,7 +30,7 @@ $ mkdir hello_world
 $ cd hello_world
 ```
 
-For Windows CMD, enter this:
+Windows CMD - ல், பின் வரும் கட்டளைகளை பயன் படுத்தலாம்:
 
 ```cmd
 > mkdir "%USERPROFILE%\projects"
@@ -40,7 +39,7 @@ For Windows CMD, enter this:
 > cd hello_world
 ```
 
-For Windows PowerShell, enter this:
+Windows PowerShell - ல், பின் வரும் கட்டளைகளை பயன் படுத்தலாம்:
 
 ```powershell
 > mkdir $env:USERPROFILE\projects
@@ -49,50 +48,48 @@ For Windows PowerShell, enter this:
 > cd hello_world
 ```
 
-### Writing and Running a Rust Program
+### இரஸ்ட் திட்டத்தை எழுதுதல்
 
-Next, make a new source file and call it *main.rs*. Rust files always end with
-the *.rs* extension. If you’re using more than one word in your filename, use
-an underscore to separate them. For example, use *hello_world.rs* rather than
-*helloworld.rs*.
+அடுத்த்தாக, *main.rs* என்ற ஒரு கோப்பை உருவாகுங்கள். இரஸ்ட் கோப்புகள் எப்பொலுதும் *.rs*
+எக்ஸ்டன்சனில் சேமிக படும். பல சொற்க்கள் உங்கள் கோப்பின் பெயரில் பயன் படுத்தினால் அவற்றை
+அடிக்கொட்டு எழுத்தை (underscore) பயன்படுத்தி பிரித்து பயன் படுத்துள்கள். உதாரனமா
+*helloworld.rs* என்று குறிக்காமல் *hello_world.rs* என்று பயன் படுத்துங்கள்.
 
-Now open the *main.rs* file you just created and enter the code in Listing 1-1.
+இப்பொழுது நீங்கள் உருவாக்கிய *main.rs* கோப்பில் 1-1 குறியிட்ட பகுதில் உள்ள கட்டளைகளை
+அச்சிட்டு சேமியுங்கள்.
 
 <span class="filename">Filename: main.rs</span>
 
 ```rust
 fn main() {
-    println!("Hello, world!");
+    println!("வணக்கம் தமிழா!");
 }
 ```
 
-<span class="caption">Listing 1-1: A program that prints `Hello, world!`</span>
+<span class="caption">Listing 1-1: `வணக்கம் தமிழா!` என்று அச்சிடும் திட்டம்</span>
 
-Save the file and go back to your terminal window. On Linux or macOS, enter
-the following commands to compile and run the file:
+சேமித்த உடன் Linux or macOS டேர்மினலில் பின்வரும் கட்டளைகள் பயன் படுத்தி கம்பைல் செய்யவும்:
 
 ```text
 $ rustc main.rs
 $ ./main
-Hello, world!
+வணக்கம் தமிழா!
 ```
 
-On Windows, enter the command `.\main.exe` instead of `./main`:
+ஒருவேலை Windows பயன் படுத்தினால்,`./main` -க்கு பதில் `.\main.exe` என்று பயன் படுத்துங்கள்:
 
 ```powershell
 > rustc main.rs
 > .\main.exe
-Hello, world!
+வணக்கம் தமிழா!
 ```
+எந்த வகையான செயலியாக இருப்பினும் `வணக்கம் தமிழா!` என்ற வாசகம் அச்சாகி இருக்கும் இல்லை
+என்றால், "பழுது நீக்கும்" பக்கதினை பயன் படுத்தி பழுதை நீக்க உதவி பெரலாம்..
 
-Regardless of your operating system, the string `Hello, world!` should print to
-the terminal. If you don’t see this output, refer back to the “Troubleshooting”
-section for ways to get help.
+`வணக்கம் தமிழா!` அச்சிட பட்டுவிட்டால் வாழ்த்துக்கள் நீங்கள் ஒரு சரியான இரஸ்ட் திட்டத்தை
+உருவாக்கி விட்டீர்கள். இது உங்களுக்கு ஒரு நல்ல துவக்கம்!
 
-If `Hello, world!` did print, congratulations! You’ve officially written a Rust
-program. That makes you a Rust programmer—welcome!
-
-### Anatomy of a Rust Program
+### இரஸ்ட் திட்டத்தின் உடற்கூற்றியல்
 
 Let’s review in detail what just happened in your Hello, world! program.
 Here’s the first piece of the puzzle:
