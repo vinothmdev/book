@@ -1,15 +1,39 @@
-## Hello, Cargo!
+## வணக்கம், சரக்கு!
 
-Cargo is Rust’s build system and package manager. Most Rustaceans use this tool
-to manage their Rust projects because Cargo handles a lot of tasks for you,
-such as building your code, downloading the libraries your code depends on, and
-building those libraries. (We call libraries your code needs *dependencies*.)
+சரக்கு என்பது இரஸ்ட்டின் கட்டட அமைப்பு மற்றும் தொகுப்பு மேலாளர். பெரும்பாலான இரஸ்டாசன்கள் இந்த கருவியை பயன்படுத்துகின்றனர்
+சரக்குகள் உங்கள் நிறைய பணிகளை கையாள்கின்றன என்பதால்,இரஸ்ட் திட்டங்களை நிர்வகிக்க,
+உங்கள் குறியீட்டை உருவாக்குவது, உங்கள் குறியீடு சார்ந்து நூலகங்கள் பதிவிறக்கம் செய்வது
+, மற்றும் நூலகங்களை உருவாக்குவது போன்ற பணிகளை செய்கின்றன. 
+ (உங்கள் குறியீடு தேவை * நூலகங்கள் * சார்புகளை நூலகங்கள் அழைக்கிறோம்.)
+(We call libraries your code needs *dependencies*.)
+எளிமையான இரஸ்ட் நிகழ்ச்சிகள், நாம் இதுவரை எழுதியுள்ளதைப் போலவே
+சார்புநிலைகளாகவும் எதுவும் குறிப்பிடப்படவில்லை. நாம் ஹலோ, உலகத்தை கட்டியிருந்தால்! சரக்கு திட்டத்தின் மூலம், அது உங்கள் குறியீட்டை உருவாக்கும் கர்கோவின் பகுதியை மட்டும் பயன்படுத்துங்கள். 
+நீங்கள் இன்னும் எழுதும்போது சிக்கலான இரஸ்ட் திட்டத்தின் மூலம், நீங்கள் சார்புகளை சேர்க்க வேண்பெரும்பாலான இரஸ்ட் திட்டங்களில் சரக்குகள், மற்றும் புத்தகத்தின் மற்ற பகுதிகள் பயன்படுத்தப்படுகின்றன
+நீங்கள் கூட சரக்கு பயன்படுத்த வேண்டும் என்று கருதுகிறது. நீங்கள் என்றால் ரஸ்ட் கொண்டு சரக்கு நிறுவப்பட்டது
+"நிறுவல்" பிரிவில் விவாதிக்கப்பட்ட அதிகாரப்பூர்வ நிறுவிகளைப் பயன்படுத்தினார். நீங்கள் என்றால்
+வேறு சில வழிகளிலும் ரஸ்ட் நிறுவப்பட்டது, சரக்கு நிறுவப்பட்டதா என சரிபார்க்கவும்
 
-The simplest Rust programs, like the one we’ve written so far, don’t have any
-dependencies. So if we had built the Hello, world! project with Cargo, it would
-only use the part of Cargo that handles building your code. As you write more
-complex Rust programs, you’ll add dependencies, and if you start a project
-using Cargo, adding dependencies will be much easier to do.
+உங்கள் முனையத்தில் கீழ்க்கண்டவற்றை உள்ளிடுக:டும், மற்றும் நீங்கள் ஒரு திட்டத்தை ஆரம்பித்தால்
+சரக்கு பயன்படுத்தி, சார்புகளை சேர்ப்பது மிகவும் எளிதாக இருக்கும்.
+
+```text
+$ cargo --version
+```
+
+நீங்கள் ஒரு பதிப்பு எண்ணைக் கண்டால், உங்களிடம் இது உள்ளது! `கட்டளை போன்ற ஒரு பிழை நீங்கள் கண்டால் அது கட்டளை`, உங்கள் நிறுவல் முறையை ஆவணத்தில் பாருங்கள்
+தனித்தனியாக சரக்கு நிறுவ எப்படி தீர்மானிக்க.
+
+### சரக்கு மூலம் ஒரு திட்டத்தை உருவாக்குதல்
+சரக்கு பயன்படுத்தி ஒரு புதிய திட்டத்தை உருவாக்குவோம் மற்றும் அது வணக்கம், உலகம்! என்ற திட்டத்திலிருந்து எப்படி வேறுபடுகிறது என்று பார்ப்போம்.
+உங்களின்  திட்ட இயக்கத்தை  அடைவுக்குள் திரும்ப பெறவும் (அல்லது
+எங்கு உங்கள் குறியீட்டை சேமித்து வைக்க முடிவு செய்தீர்கள்). பின்னர், எந்த இயக்க முறைமையிலும், பின்வருவதை இயக்கவும்:	
+```text
+$ cargo new hello_cargo --bin
+$ cd hello_cargo
+```
+முதல் கட்டளை, * hello_cargo * என்ற புதிய பைனரி இயங்கமைப்பு உருவாக்குகிறது.`-bin`ஆர்குயுமன்டை `cargo new`ற்கு அனுப்பி ஒரு நிறைவேற்றக் கூடிய பயன்பாட்டை
+ஒரு நூலகத்திற்கு பதிலாக உருவாக்குவோம்(அடிக்கடி
+ஒரு பைனரி * என்று அழைக்கப்படுகிறது) ஒரு நூலகத்திற்கு பதிலாக. எங்கள் திட்டத்தை* hello_cargo * என்று பெயரிட்டோம், மற்றும் சரக்கு அதன் கோப்புகளை அதே பெயரின் அடைவில் உருவாக்குகிறது.
 
 Because the vast majority of Rust projects use Cargo, the rest of this book
 assumes that you’re using Cargo too. Cargo comes installed with Rust if you
@@ -25,34 +49,16 @@ If you see a version number, you have it! If you see an error, such as `command
 not found`, look at the documentation for your method of installation to
 determine how to install Cargo separately.
 
-### Creating a Project with Cargo
 
-Let’s create a new project using Cargo and look at how it differs from our
-original Hello, world! project. Navigate back to your *projects* directory (or
-wherever you decided to store your code). Then, on any operating system, run
-the following:
+Hello_cargo * கோப்பறையில் சென்று கோப்புகளை பட்டியலிடுங்கள். நீங்கள் சரக்கை பார்க்கும் போது,சரக்கு இரண்டு கோப்புகள் மற்றும் ஒரு அடைவு உருவாக்கியது: a * Cargo.toml * கோப்பு மற்றும் ஒரு
+* src * கோப்பினை உள்ளே * main.rs * கோப்பில் கொண்டிருக்கும். இது ஒரு புதிய கிட் துவக்கி
+* .gitignore * கோப்பினை இணைக்கும் களஞ்சியத்தையும் கொண்டிருக்கும்.
 
-```text
-$ cargo new hello_cargo --bin
-$ cd hello_cargo
-```
+குறிப்பு: Git ஒரு பொது பதிப்பு கட்டுப்பாட்டு அமைப்பு. நீங்கள் `cargo new` என்று மாற்றலாம் வேறுபட்ட பதிப்பு கட்டுப்பாட்டு அமைப்பு அல்லது பதிப்பு கட்டுப்பாட்டு முறைமையைப் பயன்படுத்துவதன் மூலமாக
+  `-vcs` கொடி பயன்படுத்தலாம். ஏற்கனவே இருக்கும் விருப்பங்களைக் காண `சரக்கு புதிய --help` ஐ இயக்கவும்.
 
-The first command creates a new binary executable called *hello_cargo*. The
-`--bin` argument passed to `cargo new` makes an executable application (often
-just called a *binary*) as opposed to a library. We’ve named our project
-*hello_cargo*, and Cargo creates its files in a directory of the same name.
-
-Go into the *hello_cargo* directory and list the files. You’ll see that Cargo
-has generated two files and one directory for us: a *Cargo.toml* file and a
-*src* directory with a *main.rs* file inside. It has also initialized a new Git
-repository along with a *.gitignore* file.
-
-> Note: Git is a common version control system. You can change `cargo new` to
-> use a different version control system or no version control system by using
-> the `--vcs` flag. Run `cargo new --help` to see the available options.
-
-Open *Cargo.toml* in your text editor of choice. It should look similar to the
-code in Listing 1-2.
+  
+   உங்கள் உரை ஆசிரியரில் * Cargo.toml * தேர்வு செய்து திறக்கவும். அது போலவே பட்டியல் 1-2 வேண்டும்.
 
 <span class="filename">Filename: Cargo.toml</span>
 
@@ -65,22 +71,21 @@ authors = ["Your Name <you@example.com>"]
 [dependencies]
 ```
 
-<span class="caption">Listing 1-2: Contents of *Cargo.toml* generated by `cargo
-new`</span>
+<span class="caption">Listing 1-2:* Cargo.toml இன் பொருளடக்கம் * சரக்கு மூலம் உருவாக்கப்பட்டது</span>
 
-This file is in the [*TOML*][toml]<!-- ignore --> (*Tom’s Obvious, Minimal
-Language*) format, which is Cargo’s configuration format.
+இந்த கோப்பு [* TOML *] [toml] இல் உள்ளது <! --ignore--> (* டாம்'ஸ் வெளிப்படையான, குறைந்தபட்சம்
+மொழி *) வடிவம், இது கார்கோவின் கட்டமைப்பு வடிவமாகும்.
 
 [toml]: https://github.com/toml-lang/toml
 
-The first line, `[package]`, is a section heading that indicates that the
-following statements are configuring a package. As we add more information to
-this file, we’ll add other sections.
+`[தொகுப்பு]`,இதன் முதல் வரி ஒரு பகுதி தலைப்பு என்று குறிக்கிறது
+பின்வரும் அறிக்கைகள் ஒரு தொகுப்பை கட்டமைக்கிறது. மேலும் தகவலைச் சேர்ப்பது போல
+இந்த கோப்பு, நாம் பிற பிரிவுகளை சேர்க்க வேண்டும்.
 
-The next three lines set the configuration information Cargo needs to compile
-your program: the name, the version, and who wrote it. Cargo gets your name and
-email information from your environment, so if that information is not correct,
-fix the information now and then save the file.
+
+அடுத்த மூன்று கோடுகள் கார்கோவை தொகுக்க வேண்டிய கட்டமைப்பு தகவலை அமைக்கும் திட்டத்தை : பெயர், பதிப்பு, மற்றும் அது யார் எழுதியது என்பதை செய்கிறது.
+ சரக்கு உங்கள் பெயர் மற்றும் மின்னஞ்சல் தகவலை  உங்கள் சூழலில் இருந்து பெறுகிறது , அந்த தகவல் சரியாக இல்லை என்றால், தகவலை சரிசெய்து பின்னர் கோப்பை சேமிக்கவும்.
+
 
 The last line, `[dependencies]`, is the start of a section for you to list any
 of your project’s dependencies. In Rust, packages of code are referred to as
