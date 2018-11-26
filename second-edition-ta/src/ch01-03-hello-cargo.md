@@ -87,12 +87,11 @@ authors = ["Your Name <you@example.com>"]
  சரக்கு உங்கள் பெயர் மற்றும் மின்னஞ்சல் தகவலை  உங்கள் சூழலில் இருந்து பெறுகிறது , அந்த தகவல் சரியாக இல்லை என்றால், தகவலை சரிசெய்து பின்னர் கோப்பை சேமிக்கவும்.
 
 
-The last line, `[dependencies]`, is the start of a section for you to list any
-of your project’s dependencies. In Rust, packages of code are referred to as
-*crates*. We won’t need any other crates for this project, but we will in the
-first project in Chapter 2, so we’ll use this dependencies section then.
-
-Now open *src/main.rs* and take a look:
+கடைசி வரியில், [dependencies], ஒரு பிரிவில் ஆரம்பம் ஆகும் எந்த பட்டியலும் உங்கள் திட்டத்தின் சார்புகள். 
+இரஸ்ட் இல், குறியீட்டு தொகுப்புகள் crates என குறிப்பிடப்படுகின்றன.
+ இந்த திட்டத்திற்கான வேறு எந்த கோடுகளும் எங்களுக்கு தேவையில்லை, 
+ஆனால் நாங்கள் பாடம் 2 இல் முதல் திட்டத்தில் நாம் இந்த சார்புகளை பிரிவைப் பயன்படுத்துவோம்.
+ src / main.rs ஐ திறந்து ஒரு முறை பாருங்கள்:
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -102,27 +101,27 @@ fn main() {
 }
 ```
 
-Cargo has generated a Hello, world! program for you, just like the one we wrote
-in Listing 1-1! So far, the differences between our previous project and the
-project Cargo generates are that Cargo placed the code in the *src* directory,
-and we have a *Cargo.toml* configuration file in the top directory.
+கார்கோ, வணக்கம், உலகம் என்ற திட்டத்தை உங்களுக்காக உருவாக்கியுள்ளது! நாங்கள் எழுதப்பட்டதைப் போலவே, உங்களுக்காகவும் திட்டம்
+பட்டியல் 1-1 இல்! இதுவரை, எங்கள் முந்தைய திட்டம் மற்றும்  cargo திட்டம் இடையே வேறுபாடுகள்
+திட்டம் உருவாக்குகிறது cargo * குறியீட்டை * src * அடைவில் வைக்க வேண்டும்,
+மற்றும் நாம் மேலே உள்ள அடைவில் * Cargo.toml * என்ற கட்டமைப்பு கோப்பு உள்ளது.
 
-Cargo expects your source files to live inside the *src* directory. The
-top-level project directory is just for README files, license information,
-configuration files, and anything else not related to your code. Using Cargo
-helps you organize your projects. There’s a place for everything, and
-everything is in its place.
+உங்கள் மூல கோப்புகளை * src * அடைவு உள்ளே கார்கோ எதிர்பார்க்கிறது.
+மேல்-நிலை திட்ட அடைவில் README கோப்புகள், உரிமம் தகவல்,
+கட்டமைப்பு கோப்புகள் மற்றும் உங்கள் குறியீடு தொடர்பான வேறு எதுவும் இல்லை. கார்கோ
+உங்களது திட்டங்களை ஒழுங்கமைக்க உதவுகிறது. எல்லாம் ஒரு இடத்திலும், மற்றுவை
+எல்லாம் அதன் இடத்திலும் உள்ளது.
 
-If you started a project that doesn’t use Cargo, as we did with the Hello,
-world! project, you can convert it to a project that does use Cargo. Move the
-project code into the *src* directory and create an appropriate *Cargo.toml*
-file.
+நீங்கள் கர்கோவைப் பயன்படுத்தமால் வணக்கம் உலகம்! திட்டத்தை ஆரம்பித்திருந்தால்,
+கார்கோவை திட்டத்தை பயன்படுத்தி மாற்ற முடியும்.
+திட்டத்தின் குறியீட்டை* src * கோப்பகத்தில் நகர்த்தவும் மற்றும் * Cargo.toml * 
+என்ற பொருத்தமான திட்டத்தை உருவாக்கலாம்.
 
-### Building and Running a Cargo Project
+### ஒரு கார்கோ திட்டத்தின் கட்டமைப்பு மற்றம் ஓட்டம்
 
-Now let’s look at what’s different when we build and run the Hello, world!
-program with Cargo! From your *hello_cargo* directory, build your project by
-entering the following command:
+இப்போது நாம் ஹலோ, உலகத்தை உருவாக்க மற்றும் ரன் செய்யும் போது வித்தியாசமாக என்ன பார்க்கலாம்!
+சரக்கு கொண்டு திட்டம்! உங்கள் * hello_cargo * அடைவிலிருந்து, உங்கள் திட்டத்தை உருவாக்கவும்
+பின்வரும் கட்டளையை உள்ளிடவும்:
 
 ```text
 $ cargo build
@@ -130,25 +129,25 @@ $ cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 2.85 secs
 ```
 
-This command creates an executable file in *target/debug/hello_cargo* (or
-*target\debug\hello_cargo.exe* on Windows) rather than in your current
-directory. You can run the executable with this command:
+இந்த கட்டளை இயங்ககூடிய இயக்கத்தை *target / debug / hello_cargo * இல் (அல்லது
+*target \ debug \ hello_cargo.exe * விண்டோஸ் இல்) உங்கள் தற்போதைய அடைவைவிட இங்கு உருவாக்கும்.
+இந்த கட்டளையுடன் இயங்கக்கூடிய இயக்கத்தை இயக்கலாம்
 
 ```text
 $ ./target/debug/hello_cargo # or .\target\debug\hello_cargo.exe on Windows
 Hello, world!
 ```
 
-If all goes well, `Hello, world!` should print to the terminal. Running `cargo
-build` for the first time also causes Cargo to create a new file at the top
-level: *Cargo.lock*. This file keeps track of the exact versions of
-dependencies in your project. This project doesn’t have dependencies, so the
-file is a bit sparse. You won’t ever need to change this file manually; Cargo
-manages its contents for you.
+எல்லாம் நன்றாக நடந்தால், `ஹலோ, உலகம் !`என்பதை முனையத்தில் அச்சிட வேண்டும்.
+முதல் முறையாக Cargo build , ஒரு புதிய கோப்பை  cargo-வின் மேல்  * Cargo.lock *உருவாக்குகிறது
+நிலை: * Cargo.lock *. இந்த கோப்பின் சரியான பதிப்புகளைக் 
+உங்கள் திட்டத்தின் சார்புகள் கண்காணிக்கும். இந்த திட்டத்தில் சார்பு இல்லை, எனவே
+கோப்பு சிறிது சிறிதாக உள்ளது. நீங்கள் எப்போதும் இந்த கோப்பை கைமுறையாக மாற்ற வேண்டியதில்லை; சரக்கு
+உங்களுக்கான உள்ளடக்கங்களை நிர்வகிக்கிறது.
 
-We just built a project with `cargo build` and ran it with
-`./target/debug/hello_cargo`, but we can also use `cargo run` to compile the
-code and then run the resulting executable all in one command:
+நாங்கள் `cargo build` என்ற ஒரு திட்டத்தை உருவாக்கி அதை ஓடினோம்
+`./target/debug/hello_cargo`-ல் ஓட்டினோம், ஆனால் நாங்கள்  `cargo run`ஐ பயன்படுத்தி 
+குறியீட்டை தொகுக்கவும் மற்றும் ஒரே கட்டளையில்  அனைத்து நிறைவேற்றக்கூடியவனற்றையும் இயக்க வேண்டும்:
 
 ```text
 $ cargo run
@@ -158,9 +157,9 @@ Hello, world!
 ```
 
 Notice that this time we didn’t see output indicating that Cargo was compiling
-`hello_cargo`. Cargo figured out that the files hadn’t changed, so it just ran
-the binary. If you had modified your source code, Cargo would have rebuilt the
-project before running it, and you would have seen this output:
+`hello_cargo`.இந்த நேரத்தில் cargo என்று கூறுவதை வெளியீடு காணவில்லை என்பதை கவனிக்கவும்
+`Hello_cargo`. சரக்குகள் மாற்றப்படவில்லை என்று சரக்கு கண்டுபிடித்தது, இது 
+பைனரியில் இயக்கிவிட்டது. உங்கள் மூல குறியீடு மாற்றியிருந்தால், cargo வை  மீண்டும் இயக்கம் முன் அந்த திட்டத்தை கட்டியிருக்க வேண்டும்,மற்றும் நீங்கள் இந்த வெளியீட்டை பார்த்திருப்பீர்கள்:
 
 ```text
 $ cargo run
@@ -170,8 +169,8 @@ $ cargo run
 Hello, world!
 ```
 
-Cargo also provides a command called `cargo check`. This command quickly checks
-your code to make sure it compiles but doesn’t produce an executable:
+கார்கோ `cargo casa` என்று அழைக்கப்படும் ஒரு கட்டளையை வழங்குகிறது. இந்த கட்டளை உங்கள் குறியீட்டைவிரைவில் சரிபார்க்கிறது,
+ அது தொகுக்கப்பட்டுள்ளது என்பதை  ஆனால் இயங்கக்கூடியதாக உறுதி செய்யவில்லை: 
 
 ```text
 $ cargo check
@@ -179,25 +178,24 @@ $ cargo check
     Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
 ```
 
-Why would you not want an executable? Often, `cargo check` is much faster than
-`cargo build`, because it skips the step of producing an executable. If you’re
-continually checking your work while writing the code, using `cargo check` will
-speed up the process! As such, many Rustaceans run `cargo check` periodically
-as they write their program to make sure it compiles. Then they run `cargo
-build` when they’re ready to use the executable.
+நீங்கள் செயல்பட விரும்பாதது ஏன்? பெரும்பாலும், `cargo check`யை விட விரைவாக உள்ளது
+`cargi  build`, ஏனெனில் அது இயங்கக்கூடிய ஒரு உற்பத்தியைத் தடுக்கிறது. நீங்கள்
+`cargo check` பயன்படுத்தி, குறியீட்டை எழுதும் போது உங்கள் வேலையை தொடர்ந்து கண்காணித்து வரும் போது
+செயல்முறை வேகமாகிறது!. அத்துடன், பல ரஷ்யர்கள் `கார்கோ காசோலை` அவ்வப்போது இயங்குகிறார்கள்
+அவர்கள் தங்கள் நிரலை எழுதுவது உறுதிப்படுத்துகிறது. பின்னர் அவர்கள் தயாராக இருக்கும் போது `cargo build` இயக்கப்படுகிறது.
 
-Let’s recap what we’ve learned so far about Cargo:
+நாம் இதுவரை கர்கோவைப் பற்றி கற்றுக்கொண்டவற்றை மீண்டும் பார்ப்போம்:
 
-* We can build a project using `cargo build` or `cargo check`.
-* We can build and run a project in one step using `cargo run`.
-* Instead of saving the result of the build in the same directory as our code,
-  Cargo stores it in the *target/debug* directory.
+*`cargo build` அல்லது` சரக்குச் சரிபார்ப்பாக` பயன்படுத்தி ஒரு திட்டத்தை உருவாக்க முடியும்.
+* `cargo run` பயன்படுத்தி ஒரு படிவத்தில் ஒரு திட்டத்தை உருவாக்க முடியும்.
+* எங்கள் குறியீட்டில் அதே அடைவில் உருவாக்கத்தின் விளைவை சேமிப்பதற்கு பதிலாக,
+   target* debug / பிழைத்திருத்தம் * அடைவில் சேமிக்கிறது.
+   
+cargo-வைப் பயன்படுத்துவதற்கான ஒரு கூடுதலான நன்மை, கட்டளைகள் அதே இல்லை
+நீங்கள் பணிபுரியும் இயங்குதளம் இதுவே. எனவே, இந்த கட்டத்தில், நாம் இல்லை
+லினக்ஸ் மற்றும் MacOS மற்றும்  Windows க்கான குறிப்பிட்ட வழிமுறைகளை இனி வழங்குகின்றன.
 
-An additional advantage of using Cargo is that the commands are the same no
-matter which operating system you’re working on. So, at this point, we’ll no
-longer provide specific instructions for Linux and macOS versus Windows.
-
-### Building for Release
+### வெளியீட்டுக்கான கட்டிடம்
 
 When your project is finally ready for release, you can use `cargo build
 --release` to compile it with optimizations. This command will create an
@@ -210,17 +208,15 @@ repeatedly and that will run as fast as possible. If you’re benchmarking your
 code’s running time, be sure to run `cargo build --release` and benchmark with
 the executable in *target/release*.
 
-### Cargo as Convention
+### ஒப்பந்தம் போன்ற cargo
 
-With simple projects, Cargo doesn’t provide a lot of value over just using
-`rustc`, but it will prove its worth as your programs become more intricate.
-With complex projects composed of multiple crates, it’s much easier to let
-Cargo coordinate the build.
+எளிமையான திட்டங்களுடனான, cargo, இரஸ்ட்டை பயன்படுத்தும் போது நிறைய மதிப்புகளை வழங்கவில்லை, ஆனால் உங்கள் திட்டங்கள் இன்னும் சிக்கலானதாகி விட்டால் அதன் மதிப்பை நிரூபிக்கும்.
+பல அடுக்குகள் கொண்ட சிக்கலான திட்டங்களுடன்,
+சரக்கு ஒருங்கிணைத்து கட்டமைக்கும் போது மிகவும் எளிதானதாக இருக்கும்.
 
-Even though the `hello_cargo` project is simple, it now uses much of the real
-tooling you’ll use in the rest of your Rust career. In fact, to work on any
-existing projects, you can use the following commands to check out the code
-using Git, change to that project’s directory, and build:
+`Hello_cargo` திட்டம் எளிதானது என்றாலும், அது இப்போது உண்மையானதைப் கருவிகளை பயன்படுத்தி நீங்கள் இரஸ்ட்டின் மீதி வாழ்க்கையை உபயோகிக்கலாம். உண்மையில்,
+ஏற்கனவே இருக்கும் திட்டத்தில் வேலை செய்தால், நீங்கள் G it ஐ பயன்படுத்தி குறியீட்டை சரிபார்க்க பின்வரும் கட்டளைகளை பயன்படுத்தலாம்
+, அந்த திட்டத்தை கோப்பகத்திற்கு மாற்றவும், உருவாக்கவும்:
 
 ```text
 $ git clone someurl.com/someproject
@@ -228,22 +224,22 @@ $ cd someproject
 $ cargo build
 ```
 
-For more information about Cargo, check out [its documentation].
+கார்கோ பற்றிய கூடுதல் தகவலுக்கு, அதன் ஆவணமாக்கலைப் பார்க்கவும்.
 
 [its documentation]: https://doc.rust-lang.org/cargo/
 
-## Summary
+## சுருக்கம்
 
-You’re already off to a great start on your Rust journey! In this chapter,
-you’ve learned how to:
+உங்கள் ரஸ்ட் பயணத்தில் ஒரு பெரிய துவக்கத்திற்கு நீங்கள் ஏற்கனவே முற்றுப்புள்ளி வைத்திருக்கிறீர்கள்! இந்த அத்தியாயத்தில்,
+நீங்கள் எப்படி கற்றுக்கொண்டீர்கள்:
 
-* Install the latest stable version of Rust using `rustup`
-* Update to a newer Rust version
-* Open locally installed documentation
-* Write and run a Hello, world! program using `rustc` directly
-* Create and run a new project using the conventions of Cargo
+* 'Rustup` ஐ பயன்படுத்தி ரஸ்டின் சமீபத்திய நிலையான பதிப்பை நிறுவவும்
+* புதிய ரஸ்ட் பதிப்பு புதுப்பிக்கவும்
+* நிறுவப்பட்ட ஆவணங்களை திறக்க
+* ஒரு வணக்கம் எழுதுங்கள், உலகத்தை எழுதுங்கள்! திட்டத்தை நேரடியாக `rustc` பயன்படுத்துகிறது
+* கார்கோவின் மரபுகளை பயன்படுத்தி ஒரு புதிய திட்டத்தை உருவாக்கவும், இயக்கவும்
 
-This is a great time to build a more substantial program to get used to reading
-and writing Rust code. So, in Chapter 2, we’ll build a guessing game program.
-If you would rather start by learning how common programming concepts work in
-Rust, see Chapter 3 and then return to Chapter 2.
+இது வாசிப்பதற்குப் பழக்கமான ஒரு மிகப்பெரிய வேலைத்திட்டத்தை உருவாக்க இது ஒரு சிறந்த நேரம்
+மற்றும் ரஸ்ட் குறியீடு எழுதுதல். எனவே, பாடம் 2 ல், நாம் ஒரு யோசிக்கிற விளையாட்டு திட்டம் உருவாக்க வேண்டும்.
+நீங்கள் சாதாரண நிரலாக்க கருத்துக்கள் எவ்வாறு இயங்குகிறீர்கள் என்பதைக் கற்றுக் கொள்வதன் மூலம் ஆரம்பிக்க வேண்டும்
+ரஸ்ட், பாடம் 3 ஐப் பார்க்கவும், பின்னர் பாடம் 2 க்கு திரும்பவும்.
