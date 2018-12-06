@@ -7,12 +7,12 @@ option to make your variables mutable. Let’s explore how and why Rust
 encourages you to favor immutability and why sometimes you might want to opt
 out.
 
-When a variable is immutable, once a value is bound to a name, you can’t change
-that value. To illustrate this, let’s generate a new project called *variables*
-in your *projects* directory by using `cargo new --bin variables`.
+ஒரு மாறி மாறுபடாத போது, ஒரு மதிப்பு ஒரு பெயருடன் பிணைக்கப்படும் போது,
+  நீங்கள் அந்த மதிப்பை மாற்ற முடியாது.
+இதை விளக்குவதற்கு, `cargo new --bin variables` பயன்படுத்தி உங்கள் * projects * அடைவில்  *  variables *  என்ற புதிய திட்டத்தை உருவாக்கலாம்.
 
-Then, in your new *variables* directory, open *src/main.rs* and replace its
-code with the following code that won’t compile just yet:
+பின்னர், உங்கள் புதிய * variables * அடைவு, திறக்க * src / main.rs * மற்றும்
+அதன் குறியீட்டை பின்வரும் குறியீடாக மாற்றுங்கள், இது இன்னும் தொகுக்காது:
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -25,8 +25,8 @@ fn main() {
 }
 ```
 
-Save and run the program using `cargo run`. You should receive an error
-message, as shown in this output:
+`சரக்கு ரன்` -யை பயன்படுத்தி திட்டத்தை சேமித்து இயக்கவும்.
+  இந்த வெளியீட்டில் காட்டப்பட்டுள்ளபடி நீங்கள் ஒரு பிழை செய்தியைப் பெற வேண்டும்:
 
 ```text
 error[E0384]: cannot assign twice to immutable variable `x`
@@ -39,35 +39,35 @@ error[E0384]: cannot assign twice to immutable variable `x`
   |     ^^^^^ cannot assign twice to immutable variable
 ```
 
-This example shows how the compiler helps you find errors in your programs.
-Even though compiler errors can be frustrating, they only mean your program
-isn’t safely doing what you want it to do yet; they do *not* mean that you’re
-not a good programmer! Experienced Rustaceans still get compiler errors.
+உங்கள் நிரல்களில் பிழைகள் கண்டறிய எவ்வாறு தொகுப்பி உதவுகிறது என்பதை இந்த உதாரணம் காட்டுகிறது.
+கம்பைலர் பிழைகள் பிழையாக இருந்தாலும், உங்கள் திட்டம் பாதுகாப்பாக இல்லை என்றால்
+ இன்னும் என்ன செய்ய வேண்டும் என்று நீங்கள் விரும்புகிறீர்கள் என்று சொல்கிறது. அதனால் நீங்கள் 
+ ஒரு நல்ல புரோகிராமர் இல்லை *not* என்று அர்த்தம் இல்லை! அனுபவம் வாய்ந்த ராட்சான்கள் இன்னும் தொகுப்பி பிழைகளை பெறுகின்றனர்.
 
-The error message indicates that the cause of the error is that you `cannot
-assign twice to immutable variable x`, because you tried to assign a second
-value to the immutable `x` variable.
+பிழைக்கான காரணத்தைக, பிழை செய்தி குறிக்கிறது,இது
+  நீங்கள் மாறக்கூடிய மாறி x க்கு இரண்டு முறை ஒதுக்க முடியாது என்கிறது.
+  ஏனெனில் நீங்கள் மாறாத `x` மாறிக்கு இரண்டாவது மதிப்பை வழங்க முயற்சி செய்தீர்கள்.
 
-It’s important that we get compile-time errors when we attempt to change a
-value that we previously designated as immutable because this very situation
-can lead to bugs. If one part of our code operates on the assumption that a
-value will never change and another part of our code changes that value, it’s
-possible that the first part of the code won’t do what it was designed to do.
-The cause of this kind of bug can be difficult to track down after the fact,
-especially when the second piece of code changes the value only *sometimes*.
+நாம் தொகுக்க-நேர பிழைகள் பெற வேண்டியது அவசியம்
+நாம் ஒரு மதிப்பை மாற்ற முயற்சிக்கும் போது
+இந்த நிலைமை பிழைகள் வழிவகுக்கும் என்பதால் முன்னதாகவே முன்மாதிரியாக நாங்கள் நியமிக்கப்பட்டோம்.
+எங்கள் குறியீட்டின் ஒரு பகுதியானது உத்தேசத்தில் செயல்படுகிறது என்றால்
+ எங்கள் குறியீடு மாற்றத்தின் மற்றொரு பகுதி மதிப்புஒருபோதும் மாறாது.
+குறியிட்டின் ஒரு பகுதி, முன்பு வடிவமைக்கப்பட்டுள்ளதை ஒன்றும் செய்யாது.இந்த வகையான பிழையின் காரணம் உண்மையைக் கண்டுபிடிப்பதற்கு கடினமாக இருக்கலாம்,
+குறிப்பாக இரண்டாவது குறியீட்டின் மதிப்பு *sometimes * மாறும் போது.
 
-In Rust, the compiler guarantees that when you state that a value won’t change,
-it really won’t change. That means that when you’re reading and writing code,
-you don’t have to keep track of how and where a value might change. Your code
-is thus easier to reason through.
+இரஸ்ட், கம்பைலர் உத்தரவாதம் என்று ஒரு மதிப்பு மாறாது என்று நீங்கள் குறிப்பிடுகையில்,
+அது உண்மையில் மாறாது.
+அதாவது நீங்கள் குறியீட்டை படித்து மற்றும்  எழுதும்போது, 
+எப்படி ஒரு மதிப்பு மாறக்கூடும் என்பதை கண்காணிக்க வேண்டியதில்லை.
 
-But mutability can be very useful. Variables are immutable only by default; as
-you did in Chapter 2, you can make them mutable by adding `mut` in front of the
-variable name. In addition to allowing this value to change, `mut` conveys
-intent to future readers of the code by indicating that other parts of the code
-will be changing this variable value.
+ஆனால் மாற்றமடைதல் மிகவும் பயனுள்ளதாக இருக்கும். மாறிகள் இயல்பாகவே மாறாதவை;
+அத்தியாயம் 2 ல் நீங்கள் செய்ததைப் போலவே, நீங்கள் மாறியின் பெயர் முன்வைக்கப்படுவதன் மூலம், 'mut` ஐ சேர்ப்பதன் மூலம் அவற்றை மாற்ற முடியும்.
+  இந்த மதிப்பை மாற்ற அனுமதிக்கும் கூடுதலாக,
+குறியீட்டின் பிற பகுதிகளானது இந்த மாறி மதிப்பு மாறும் என்பதைக் குறிக்கும் வகையில் 
+குறியீட்டின் வருங்கால வாசகர்களுக்கு `mut` என்ற எண்ணம் உள்ளது.
 
-For example, let’s change *src/main.rs* to the following:
+உதாரணமாக, பின்வருமாறு * src / main.rs * ஐ மாற்றலாம்:
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -80,7 +80,7 @@ fn main() {
 }
 ```
 
-When we run the program now, we get this:
+இப்போது நிரலை இயக்கினால், இதைப் பெறுவோம்:
 
 ```text
 $ cargo run
@@ -91,43 +91,42 @@ The value of x is: 5
 The value of x is: 6
 ```
 
-We’re allowed to change the value that `x` binds to from `5` to `6` when `mut`
-is used. In some cases, you’ll want to make a variable mutable because it makes
-the code more convenient to write than if it had only immutable variables.
+`x` ஐ `5 இருந்து `6` வரை` என்ற மதிப்பை மாற்ற அனுமதிக்கும் போது, `mut` பயன்படுத்தப்தபடுகிறது.
+  சில சந்தர்ப்பங்களில், நீங்கள் ஒரு மாறி mutable செய்ய வேண்டும்
+  அது மாறக்கூடிய மாறிகள் கொண்டிருப்பதைக் காட்டிலும் குறியீடாக எழுத மிகவும் வசதியானது.
+  
+தடுப்பு முகாம்களுக்கு கூடுதலாக கருத்தில் கொள்ள பல வர்த்தக வாய்ப்புகள் உள்ளன.
+  எடுத்துக்காட்டாக, நீங்கள் பெரிய தரவு கட்டமைப்புகளைப் பயன்படுத்துகிறீர்கள்,
+  புதிதாக ஒதுக்கப்பட்ட நிகழ்வுகளை நகலெடுப்பதிலும் திரும்புவதிலும் வேறொரு இடத்தில் மாற்றம் ஏற்படுவதாகும். 
+  சிறிய தரவு கட்டமைப்புகள் மூலம், புதிய நிகழ்வுகளை உருவாக்குதல் மற்றும் மேலும் செயல்பாட்டு நிரலாக்க பாணியில் எழுதுவது எளிதாக இருக்கும்,
+அதனால் குறைந்த செயல்திறன் அந்த தெளிவை பெற ஒரு பயனுள்ளது தண்டனை இருக்கலாம்.
 
-There are multiple trade-offs to consider in addition to the prevention of
-bugs. For example, in cases where you’re using large data structures, mutating
-an instance in place may be faster than copying and returning newly allocated
-instances. With smaller data structures, creating new instances and writing in
-a more functional programming style may be easier to think through, so lower
-performance might be a worthwhile penalty for gaining that clarity.
+### மாறிகள் மற்றும் மாறிலிகள் இடையே வேறுபாடுகள்
 
-### Differences Between Variables and Constants
+ஒரு மாறியின் மதிப்பை மாற்ற இயலாமல் இருக்கலாம்
+மற்ற நிரலாக்க கருத்துக்கள் பெரும்பாலும் பிற மொழிகளில் உள்ளன: * consonants *.
+ மாறாத மாறிகள் போல, மாறிலிகள் ஒரு பெயருடன் பிணைந்துள்ள மதிப்புகள் ஆகும்,
+ மாற்றுவதற்கு அனுமதி இல்லை, ஆனால் மாறிலிகள் மற்றும் சில வேறுபாடுகள் உள்ளன
+மாறிகள்.
 
-Being unable to change the value of a variable might have reminded you of
-another programming concept that most other languages have: *constants*. Like
-immutable variables, constants are values that are bound to a name and are not
-allowed to change, but there are a few differences between constants and
-variables.
+முதலாவதாக, மாறிலிகளுடன் `mut` பயன்படுத்த உங்களுக்கு அனுமதி இல்லை.
+மாறிலிகள் இயல்பாகவே மாறாதவை அல்ல--எப்போதும் மாறக்கூடியவை.
 
-First, you aren’t allowed to use `mut` with constants. Constants aren’t just
-immutable by default—they’re always immutable.
+நீங்கள் `let` முக்கிய வார்த்தைக்கு பதிலாக 'const` keyword ஐப் பயன்படுத்தி மாறிலிகளை அறிவிக்கிறீர்கள்,
+மற்றும் மதிப்பின் வகையை * must* குறிக்க வேண்டும் .
+நாம் அடுத்த வகை, "தரவு வகைகள்" என்ற வகைகளை வகைப்படுத்தவும், பகுப்புகளை வகைப்படுத்தவும் போகிறோம், எனவே விவரங்களைப் பற்றி கவலைப்படாதீர்கள்.
+நீங்கள் எப்போதையும் வகைப்படுத்த வேண்டும் என்று உங்களுக்குத் தெரியும்.
 
-You declare constants using the `const` keyword instead of the `let` keyword,
-and the type of the value *must* be annotated. We’re about to cover types and
-type annotations in the next section, “Data Types,” so don’t worry about the
-details right now. Just know that you must always annotate the type.
+கான்ஸ்டன்ட்கள் உலகளாவிய நோக்கம் உள்ளிட்ட எந்தவொரு நோக்கிலும் அறிவிக்கப்படலாம், 
+இது குறியீடுகளின் பல பகுதிகளை அறிந்து கொள்ள வேண்டிய மதிப்புகளுக்கு  உதவுகிறது.
 
-Constants can be declared in any scope, including the global scope, which makes
-them useful for values that many parts of code need to know about.
+கடைசி வேறுபாடு மாறிலிகள்,  ஒரு நிலையான வெளிப்பாட்டை மட்டுமே அமைக்க முடியும்,
+ஒரு செயல்பாடு அழைப்பு அல்லது இயக்கத்தில் கணக்கிடப்
+படக்கூடிய எந்த வேறு மதிப்பின் விளைவு அல்ல.
 
-The last difference is that constants may be set only to a constant expression,
-not the result of a function call or any other value that could only be
-computed at runtime.
-
-Here’s an example of a constant declaration where the constant’s name is
-`MAX_POINTS` and its value is set to 100,000. (Rust’s naming convention for
-constants is to use all uppercase with underscores between words):
+இங்கே ஒரு நிலையான அறிவிப்பு ஒரு உதாரணம் எங்கே நிலையான பெயர்
+`MAX_POINTS` மற்றும் அதன் மதிப்பு 100,000 ஆக அமைக்கப்பட்டுள்ளது.
+(மாறாலிக்கான இரஸ்டின் பெயரிடும் மாநாடு அனைத்து பெரியெளுத்துக்களுக்குடன் அடிக்கோடிட்டு இடையே வார்த்தைகளுடன் பயன்படுத்தப்படுகிறது):
 
 ```rust
 const MAX_POINTS: u32 = 100_000;
@@ -139,20 +138,20 @@ domain that multiple parts of the program might need to know about, such as the
 maximum number of points any player of a game is allowed to earn or the speed
 of light.
 
-Naming hardcoded values used throughout your program as constants is useful in
-conveying the meaning of that value to future maintainers of the code. It also
-helps to have only one place in your code you would need to change if the
-hardcoded value needed to be updated in the future.
+உங்கள் நிரல் முழுவதும் பயன்படுத்தப்பட்டுள்ள கடினப்படுத்தப்பட்ட குறியீட்டு மதிப்புகள் மாறிலியாக இருக்கும்
+குறியீட்டின் எதிர்கால பராமரிப்பாளர்களுக்கு அந்த மதிப்பின் பொருள் வெளிப்படுத்துகிறது.
+  இது உங்கள் குறியீட்டில் ஒரே ஒரு இடத்தைப் பெற உதவுகிறது என்றால், 
+ மேம்படுத்தப்பட வேண்டிய கடினமான மதிப்பை எதிர்காலத்தில் நீங்கள் மாற்ற வேண்டும்.
 
-### Shadowing
+###   நிழலிடல்
 
-As you saw in the guessing game tutorial in the “Comparing the Guess to the
-Secret Number” section in Chapter 2, you can declare a new variable with the
-same name as a previous variable, and the new variable shadows the previous
-variable. Rustaceans say that the first variable is *shadowed* by the second,
-which means that the second variable’s value is what appears when the variable
-is used. We can shadow a variable by using the same variable’s name and
-repeating the use of the `let` keyword as follows:
+நீங்கள் கற்பனை விளையாட்டு பயிற்சி கண்டது போல் "Comparing the Guess to the Secret Number " 
+பாடம் 2-ம் பிரிவில்,  நீங்கள் ஒரு முந்தைய மாறி அதே பெயரில் ஒரு புதிய மாறி அறிவிக்க முடியும்,
+  மற்றும் புதிய மாறி நிழலை முந்தைய மாறியில் அறிவிக்க முடியும்.
+Rustaceans முதல் மாறி  * shadowed * -ஐ இரண்டாவது மாறியில்,
+அதாவது மதிப்பு உபயோகப்படுத்தும் போது இரண்டாவது மாறியின் மதிப்பு என்ன தோன்றும் என்பதை சொல்கிறது.
+ அதே மாறிப் பெயரைப் பயன்படுத்துவதன் மூலம் ஒரு மாறியை நிழலிடலாம் மற்றும்
+  பின்வருமாறு `let` முக்கிய சொல்லைப் பயன்படுத்துதலாம்:
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -168,11 +167,11 @@ fn main() {
 }
 ```
 
-This program first binds `x` to a value of `5`. Then it shadows `x` by
-repeating `let x =`, taking the original value and adding `1` so the value of
-`x` is then `6`. The third `let` statement also shadows `x`, multiplying the
-previous value by `2` to give `x` a final value of `12`. When we run this
-program, it will output the following:
+இந்த திட்டம் முதலில்  x` -ல் `5` என்ற மதிப்பை பிணைக்கிறது. பின்னர் `x` 
+-ன் நிழல்கள்  மறுபடியும் `let x` செய்வதன் மூலம், அசல் மதிப்பை எடுத்து 
+`1` -ஐ சேர்த்தால்,` x`-ன் மதிப்பு  `6` ஆகும்.  மூன்றாவது `let` அறிக்கையும் கூட நிழல்கள் ` x` -ல் ,
+முந்தைய மதிப்பை `2`-ல் பெருக்கி,`x`-ன் இறுதி மதிப்பு ` 12` ஆககொடுக்கிறது.
+நாம் இந்த திட்டத்தை இயக்கும்போது, பின்வருவனவற்றை வெளியிடுவோம்:
 
 ```text
 $ cargo run
@@ -182,11 +181,11 @@ $ cargo run
 The value of x is: 12
 ```
 
-Shadowing is different than marking a variable as `mut`, because we’ll get a
-compile-time error if we accidentally try to reassign to this variable without
-using the `let` keyword. By using `let`, we can perform a few transformations
-on a value but have the variable be immutable after those transformations have
-been completed.
+நிழல்கள், `mut` என்ற ஒரு மாறியை குறிக்கும் போது வேறுபட்டது,
+  ஏனென்றால் நாம் `compile-time error` ஐப் பெறுவோம் என்றால் நாம் இந்த மாறிக்கு`
+  `let`key-ஐப் பயன்படுத்தாமல் தட்டச்சு செய்ய முயற்சிக்கிறோம். `Let` ஐப் பயன்படுத்துவதன் மூலம்,
+  நாம் ஒரு மதிப்பில், ஒரு சில மாற்றங்களை செய்ய முடியும் ஆனால் 
+  அந்த மாற்றங்கள் முடிந்ததும் மாறி மாறக்கூடியதாக இருக்க வேண்டும்.
 
 The other difference between `mut` and shadowing is that because we’re
 effectively creating a new variable when we use the `let` keyword again, we can
